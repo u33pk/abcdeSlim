@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="abcdecoder-jvm-0.1.0-master-5fa7114">
+    <output-path>$PROJECT_DIR$/abcdecoder/build/libs</output-path>
+    <root id="archive" name="abcdecoder-jvm-0.1.0-master-5fa7114.jar">
+      <element id="module-output" name="kra.abcdecoder.jvmMain" />
+    </root>
+  </artifact>
+</component>

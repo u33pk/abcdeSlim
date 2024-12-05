@@ -15,16 +15,15 @@ class PseudoCodeInstParser:InstCommentParser {
         return res.toString().replace("  ", ", ")
     }
 
-    fun splicingArgRange(asmItem: Asm.AsmItem, pos: Int): String {
-        var res = StringBuilder()
+    fun splicingArgRange(regs: Int, regs_len: Int): String {
+        val res = StringBuilder()
 
-        var args_len = asmItem.args[pos].toInt()
-        var startVReg = asmItem.args[pos + 1]
-        var vRegIdx = startVReg.split('v')[1].toInt()
-        for (i in vRegIdx..(vRegIdx + args_len)) {
-            res.append(" v${i} ")
+        for(i in regs..<regs + regs_len){
+            res.append(" v$i ")
         }
+
         return res.toString().replace("  ", ", ")
+
     }
 
     fun defaultRes(asmItem: Asm.AsmItem): String{
@@ -70,24 +69,27 @@ class PseudoCodeInstParser:InstCommentParser {
                 return "nop"
             }
             "call instructions" -> {
-                val name = asmItem.asmName
-                when {
-                    name.contains("callthisrange") -> {
-                        // 1111111111
-                        return "acc = acc(${splicingArgRange(asmItem, 3)})"
-                    }
-                    name.contains("callthis") ->
-                        return "acc = ${asmItem.args[1]}.acc(${splicingArg(asmItem){ idx -> idx > 1 }})"
 
-                    name.contains("callarg") ->
+                when(asmItem.asmName) {
+                    "callarg0", "callarg1", "callarg2", "callarg3" ->
                         return "acc = acc(${splicingArg(asmItem){ idx -> idx > 2 }})"
-
-                    name.contains("callrange") ->
-                        return "acc = acc(${splicingArg(asmItem){ idx -> idx > 3 }})"
-
-                    else -> {
-                        return defaultRes(asmItem)
+                    "callrange" -> {
+                        val arg_len = asmItem.args[1].toInt()
+                        val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
+                        return "acc = acc(${splicingArgRange(s_reg_idx, arg_len)})"
                     }
+                    "supercallspread" -> return ""
+                    "apply" -> return ""
+                    "callthis0", "callthis1", "callthis2", "callthis3" ->
+                        return "acc = ${asmItem.args[1]}.acc(${splicingArg(asmItem){ idx -> idx > 1 }})"
+                    "callthisrange" -> {
+                        val arg_len = asmItem.args[1].toInt()
+                        val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
+                        return "acc = ${asmItem.args[2]}(${splicingArgRange(s_reg_idx+1, arg_len)})"
+                    }
+                    "supercallthisrange" -> return ""
+                    "supercallarrowrange" -> return ""
+                    else -> return defaultRes(asmItem)
                 }
             }
             "object visitors" -> {
@@ -119,8 +121,8 @@ class PseudoCodeInstParser:InstCommentParser {
                     "getmodulenamespace" -> return "--------"
                     "stmodulevar" -> return "export acc"
                     "trystglobalbyname" -> return "--------"
-                    "ldglobal", "tryldglobalbyname" -> return "acc = global[${asmItem.args[1]}]"
-                    "stglobalvar" -> return "--------"
+                    "ldglobalvar", "tryldglobalbyname" -> return "acc = GLOBAL[${asmItem.args[1]}]"
+                    "stglobalvar", "sttoglobalrecord" -> return "GLOBAL[${asmItem.args[1]}] = acc"
                     "ldobjbyname" -> return "acc = acc[${asmItem.args[1]}]"
                     "stobjbyname" -> return "--------"
                     "stownbyname" -> return "--------"
@@ -129,7 +131,6 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldlocalmodulevar" -> return "--------"
                     "ldexternalmodulevar" -> return "acc = ${asmItem.args[0]}"
                     "stconsttoglobalrecord" -> return "--------"
-                    "sttoglobalrecord" -> return "--------"
                     "stownbyvaluewithnameset" -> return "--------"
                     "stownbynamewithnameset" -> return "--------"
                     "ldbigint" -> return "--------"
@@ -146,7 +147,7 @@ class PseudoCodeInstParser:InstCommentParser {
             "definition instuctions" -> {
                 when(asmItem.asmName) {
                     "definegettersetterbyvalue" -> return "--------"
-                    "definefunc" -> return "export function ${asmItem.args[1]}"
+                    "definefunc" -> return "acc = function ${asmItem.args[1]}"
                     "definemethod" -> return "--------"
                     "defineclasswithbuffer" -> return defineClassWithBuffer(asmItem)
                     "deprecated.defineclasswithbuffer" -> return asmItem.asmName
@@ -164,7 +165,11 @@ class PseudoCodeInstParser:InstCommentParser {
                     "createobjectwithbuffer" -> return "--------"
                     "createregexpwithliteral" -> return "--------"
                     "newobjapply" -> return "--------"
-                    "newobjrange" -> return "-------- acc = ${asmItem.args[2]}"
+                    "newobjrange" -> {
+                        val arg_len = asmItem.args[1].toInt()
+                        val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
+                        return "acc = new ${asmItem.args[2]}(${splicingArgRange(s_reg_idx+1, arg_len)})"
+                    }
                     "newlexenv" -> return "--------"
                     "newlexenvwithname" -> return "--------"
                     "createasyncgeneratorobj" -> return "--------"
@@ -202,7 +207,7 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldundefined" -> return "acc = UNDEFINED"
                     "ldnull" -> return "acc = NULL"
                     "ldsymbol" -> return "acc ??= SYMBOL"
-                    "ldglobal" -> return "acc ??= GLOBAL"
+                    "ldglobal" -> return "acc = GLOBAL"
                     "ldtrue" -> return "acc = true"
                     "ldfalse" -> return "acc = false"
                     "ldhole" -> return "acc ??= HOLE"
