@@ -60,7 +60,11 @@ kotlin {
                 implementation(project(":modules:resde"))
                 implementation(project(":modules:hapde"))
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0")
-
+                implementation("com.google.guava:guava:33.3.1-jre")
+                implementation("net.sf.jung:jung-api:2.1.1")
+                implementation("net.sf.jung:jung-graph-impl:2.1.1")
+                implementation("net.sf.jung:jung-algorithms:2.1.1")
+                implementation("net.sf.jung:jung-visualization:2.1.1")
             }
         }
 

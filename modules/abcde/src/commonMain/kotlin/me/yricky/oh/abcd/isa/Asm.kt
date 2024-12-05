@@ -46,13 +46,14 @@ class Asm(
         }
         li
     }
+    val baseBlocks = BaseBlockControlFlow(this.list).baseBlocks
 
-    val baseBlockCF:List<BaseBlock> by lazy {
+    val baseBlockCF:MutableValueGraph<BaseBlock, Boolean> by lazy {
         val cf = BaseBlockControlFlow(this.list)
         cf.generaStep1()
         cf.generaStep2()
         cf.generaStep3()
-        cf.baseBlocks
+        cf.baseBlockCF
     }
 
 
