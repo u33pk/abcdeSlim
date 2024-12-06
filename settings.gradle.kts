@@ -24,7 +24,7 @@ include(":modules:abcde")
 include(":modules:resde")
 include(":modules:hapde")
 
-include(":examples:findStr")
+//include(":examples:findStr")
 
 include("abcdecoder")
 include("modules:openai")

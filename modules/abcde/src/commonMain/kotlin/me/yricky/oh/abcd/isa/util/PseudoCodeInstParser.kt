@@ -87,8 +87,12 @@ class PseudoCodeInstParser:InstCommentParser {
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
                         return "acc = ${asmItem.args[2]}(${splicingArgRange(s_reg_idx+1, arg_len)})"
                     }
-                    "supercallthisrange" -> return ""
-                    "supercallarrowrange" -> return ""
+                    "supercallthisrange" -> {
+                        val arg_len = asmItem.args[1].toInt()
+                        val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
+                        return "acc = super(${splicingArgRange(s_reg_idx, arg_len)})"
+                    }
+                    "supercallarrowrange" -> return "------------"
                     else -> return defaultRes(asmItem)
                 }
             }
@@ -105,13 +109,13 @@ class PseudoCodeInstParser:InstCommentParser {
                     "copydataproperties" -> return "--------"
                     "starrayspread" -> return "--------"
                     "setobjectwithproto" -> return "--------"
-                    "ldobjbyvalue" -> return "--------"
+                    "ldobjbyvalue" -> return "acc = ${asmItem.args[1]}[acc]"
                     "stobjbyvalue" -> return "--------"
                     "stownbyvalue" -> return "--------"
                     "ldsuperbyvalue" -> return "--------"
                     "stsuperbyvalue" -> return "--------"
                     "ldobjbyindex" -> return "--------"
-                    "stobjbyindex" -> return "--------"
+                    "stobjbyindex" -> return "${asmItem.args[1]}[${asmItem.args[1]}] = acc"
                     "stownbyindex" -> return "acc[${asmItem.args[2]}] = ${asmItem.args[1]}"
                     "asyncfunctionresolve" -> return "--------"
                     "asyncfunctionreject" -> return "--------"
@@ -166,7 +170,7 @@ class PseudoCodeInstParser:InstCommentParser {
                     "createregexpwithliteral" -> return "--------"
                     "newobjapply" -> return "--------"
                     "newobjrange" -> {
-                        val arg_len = asmItem.args[1].toInt()
+                        val arg_len = asmItem.args[1].toInt() - 1
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
                         return "acc = new ${asmItem.args[2]}(${splicingArgRange(s_reg_idx+1, arg_len)})"
                     }
