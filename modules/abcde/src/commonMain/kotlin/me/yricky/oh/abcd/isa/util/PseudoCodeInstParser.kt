@@ -36,11 +36,16 @@ class PseudoCodeInstParser:InstCommentParser {
         return res.toString()
     }
 
-    fun defineClassWithBuffer(asmItem: Asm.AsmItem): String{
-        var data = asmItem.args[2].split(",")
-//        var
-
-        return "${asmItem.args.size}"
+    fun withBuffer(data: String, action: (String?, String?) -> String): String{
+        val regex = Regex("(\\w+):([^,]+)")
+        val matchResult = regex.findAll(data)
+        var res = StringBuilder()
+        matchResult.forEach { match ->
+            val key = match.groups[1]?.value
+            val value = match.groups[2]?.value
+            res.append(" ${action(key, value)} ")
+        }
+        return res.toString().replace("  ", ", ")
     }
 
     override fun parse(asmItem: Asm.AsmItem): String? {
@@ -72,14 +77,14 @@ class PseudoCodeInstParser:InstCommentParser {
 
                 when(asmItem.asmName) {
                     "callarg0", "callarg1", "callarg2", "callarg3" ->
-                        return "acc = acc(${splicingArg(asmItem){ idx -> idx > 2 }})"
+                        return "acc = acc(${splicingArg(asmItem){ idx -> idx >= 1 }})"
                     "callrange" -> {
                         val arg_len = asmItem.args[1].toInt()
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
                         return "acc = acc(${splicingArgRange(s_reg_idx, arg_len)})"
                     }
-                    "supercallspread" -> return ""
-                    "apply" -> return ""
+                    "supercallspread" -> return "------------"
+                    "apply" -> return "------------"
                     "callthis0", "callthis1", "callthis2", "callthis3" ->
                         return "acc = ${asmItem.args[1]}.acc(${splicingArg(asmItem){ idx -> idx > 1 }})"
                     "callthisrange" -> {
@@ -107,19 +112,20 @@ class PseudoCodeInstParser:InstCommentParser {
                     "suspendgenerator" -> return "${asmItem.args[0]} = suspend_flag = 1"
                     "asyncfunctionawaituncaught" -> return "await"
                     "copydataproperties" -> return "--------"
-                    "starrayspread" -> return "--------"
+                    "starrayspread" -> return "${asmItem.args[0]} = [...${asmItem.args[0]}, ...acc]"
                     "setobjectwithproto" -> return "--------"
                     "ldobjbyvalue" -> return "acc = ${asmItem.args[1]}[acc]"
-                    "stobjbyvalue" -> return "--------"
-                    "stownbyvalue" -> return "--------"
+//                    "stobjbyvalue" -> return "${asmItem.args[1]}[${asmItem.args[2]}] = acc"
+//                    "stownbyvalue" -> return "--------"
                     "ldsuperbyvalue" -> return "--------"
                     "stsuperbyvalue" -> return "--------"
-                    "ldobjbyindex" -> return "--------"
-                    "stobjbyindex" -> return "${asmItem.args[1]}[${asmItem.args[1]}] = acc"
-                    "stownbyindex" -> return "acc[${asmItem.args[2]}] = ${asmItem.args[1]}"
+//                    "ldobjbyindex" -> return "--------"
+                    "stobjbyindex", "stobjbyvalue", "stobjbyname", "stownbyvalue","stownbyname","stownbyindex" ->
+                        return "${asmItem.args[1]}[${asmItem.args[2]}] = acc"
+//                    "stownbyvalue","stownbyname","stownbyindex" -> return "${asmItem.args[1]}[${asmItem.args[2]}] = acc"
                     "asyncfunctionresolve" -> return "--------"
                     "asyncfunctionreject" -> return "--------"
-                    "copyrestargs" -> return "--------"
+                    "copyrestargs" -> return "acc = arg${asmItem.args[0]}"
                     "ldlexvar" -> return "--------"
                     "stlexvar" -> return "--------"
                     "getmodulenamespace" -> return "--------"
@@ -127,9 +133,9 @@ class PseudoCodeInstParser:InstCommentParser {
                     "trystglobalbyname" -> return "--------"
                     "ldglobalvar", "tryldglobalbyname" -> return "acc = GLOBAL[${asmItem.args[1]}]"
                     "stglobalvar", "sttoglobalrecord" -> return "GLOBAL[${asmItem.args[1]}] = acc"
-                    "ldobjbyname" -> return "acc = acc[${asmItem.args[1]}]"
-                    "stobjbyname" -> return "--------"
-                    "stownbyname" -> return "--------"
+                    "ldobjbyname", "ldobjbyindex" -> return "acc = acc[${asmItem.args[1]}]"
+//                    "stobjbyname" -> return "--------"
+//                    "stownbyname" -> return "--------"
                     "ldsuperbyname" -> return "--------"
                     "stsuperbyname" -> return "--------"
                     "ldlocalmodulevar" -> return "--------"
@@ -153,8 +159,13 @@ class PseudoCodeInstParser:InstCommentParser {
                     "definegettersetterbyvalue" -> return "--------"
                     "definefunc" -> return "acc = function ${asmItem.args[1]}"
                     "definemethod" -> return "--------"
-                    "defineclasswithbuffer" -> return defineClassWithBuffer(asmItem)
-                    "deprecated.defineclasswithbuffer" -> return asmItem.asmName
+                    "defineclasswithbuffer" -> {
+
+                        var buff = withBuffer(asmItem.args[2]){ key, value ->
+                            return@withBuffer "$value : $key"
+                        }
+                        return "class ${asmItem.args[1]} ($buff) {}"
+                    }
                     else -> return defaultRes(asmItem)
                 }
             }
@@ -165,10 +176,17 @@ class PseudoCodeInstParser:InstCommentParser {
                     "creategeneratorobj" -> return "--------"
                     "createiterresultobj" -> return "--------"
                     "createobjectwithexcludedkeys" -> return "--------"
-                    "createarraywithbuffer" -> return "--------"
+                    "createarraywithbuffer" -> {
+                        val buff = withBuffer(asmItem.args[1]){ key, value ->
+                            return@withBuffer value.toString()
+                        }
+                        return "acc = [${buff}]"
+                    }
                     "createobjectwithbuffer" -> return "--------"
                     "createregexpwithliteral" -> return "--------"
-                    "newobjapply" -> return "--------"
+                    "newobjapply" -> {
+                        return "acc = new ${asmItem.args[1]}(acc)"
+                    }
                     "newobjrange" -> {
                         val arg_len = asmItem.args[1].toInt() - 1
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
@@ -246,6 +264,20 @@ class PseudoCodeInstParser:InstCommentParser {
                     "instanceof" -> return "--------"
                     "strictnoteq" -> return "acc = ${asmItem.args[0]} !== ${asmItem.args[1]}"
                     "stricteq" -> return "acc = ${asmItem.args[0]} === ${asmItem.args[1]}"
+                    else -> return defaultRes(asmItem)
+                }
+            }
+            "unary operations" -> {
+                when(asmItem.asmName) {
+                    "typeof" -> return "--------"
+                    "tonumber" -> return "--------"
+                    "tonumeric" -> return "--------"
+                    "neg" -> return "--------"
+                    "not" -> return "--------"
+                    "inc" -> return "acc = acc + 1"
+                    "dec" -> return "acc = acc - 1"
+                    "istrue" -> return "acc = acc == true"
+                    "isfalse" -> return "acc = acc == false"
                     else -> return defaultRes(asmItem)
                 }
             }
