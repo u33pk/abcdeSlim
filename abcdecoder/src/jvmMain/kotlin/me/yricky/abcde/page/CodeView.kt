@@ -2,7 +2,6 @@ package me.yricky.abcde.page
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,11 +16,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.text.*
 import androidx.compose.ui.unit.dp
-import edu.uci.ics.jung.algorithms.layout.KKLayout
+import edu.uci.ics.jung.algorithms.layout.FRLayout
 import edu.uci.ics.jung.graph.DirectedSparseMultigraph
 import edu.uci.ics.jung.visualization.Layer
-import edu.uci.ics.jung.visualization.VisualizationImageServer
-import edu.uci.ics.jung.visualization.control.CrossoverScalingControl
+import edu.uci.ics.jung.visualization.VisualizationViewer
+import edu.uci.ics.jung.visualization.control.*
 import kotlinx.coroutines.flow.collectLatest
 import me.yricky.abcde.AppState
 import me.yricky.abcde.HapSession
@@ -35,12 +34,12 @@ import me.yricky.oh.abcd.code.TryBlock
 import me.yricky.oh.abcd.isa.*
 import me.yricky.oh.abcd.isa.util.ExternModuleParser
 import me.yricky.oh.abcd.isa.util.V2AInstParser
-import java.awt.Dimension
-import java.awt.Font
-import java.awt.Rectangle
+import java.awt.*
+import java.awt.event.*
 import java.awt.geom.AffineTransform
 import java.awt.geom.Point2D
 import javax.swing.*
+
 
 class CodeView(val code: Code,override val hap:HapView? = null):AttachHapPage() {
     companion object{
@@ -331,11 +330,12 @@ class CodeView(val code: Code,override val hap:HapView? = null):AttachHapPage() 
                         }
 
                         // 创建一个布局并绘制 JUNG 图
-                        val layout = KKLayout(jungGraph)
-                        layout.size = Dimension(1000, 1000)
-                        val visualizationServer = VisualizationImageServer<BaseBlockControlFlow.BaseBlock, String>(layout, Dimension(500, 500))
-//                        val visualizationServer = BasicVisualizationServer<BaseBlockControlFlow.BaseBlock, String>(layout, Dimension(500, 500))
+                        val layout = FRLayout(jungGraph)
+                        layout.setRepulsionMultiplier(2.0)
 
+                        layout.size = Dimension(1000, 1000)
+                        val visualizationServer = VisualizationViewer<BaseBlockControlFlow.BaseBlock, String>(layout, Dimension(500, 500))
+//                        val visualizationServer = BasicVisualizationServer<BaseBlockControlFlow.BaseBlock, String>(layout, Dimension(500, 500))
 
 
                         //设置节点居中，形状，大小
@@ -391,39 +391,28 @@ class CodeView(val code: Code,override val hap:HapView? = null):AttachHapPage() 
                             } as java.awt.Paint
                         }
 
-                        //支持界面放大缩小
-                        val scalingControl = CrossoverScalingControl()
-                        val zoomInButton = JButton("Zoom In").apply {
-                            addActionListener {
-                                scalingControl.scale(visualizationServer,1.1f,visualizationServer.center)
-                            }
-                        }
-                        val zoomOutButton = JButton("Zoom Out").apply {
-                            addActionListener {
-                                scalingControl.scale(visualizationServer, 0.9f, visualizationServer.center) // 缩小 10%
-                            }
-                        }
-                        val controlPanel = JPanel().apply {
-                            add(zoomInButton)
-                            add(zoomOutButton)
-                        }
-
-
 
                         // 将结果放入一个 Swing 窗口
                         val frame = JFrame("MutableValueGraph Visualization")
                         frame.contentPane.add(visualizationServer)
                         frame.defaultCloseOperation = WindowConstants.DISPOSE_ON_CLOSE
-                        frame.add(controlPanel, "South")
                         frame.pack()
                         frame.isVisible = true
 
 
-                        //鼠标滚轮缩放
-                        visualizationServer.addMouseWheelListener{ event ->
-                            val scale = if (event.wheelRotation < 0) 1.1f else 0.9f
-                            scalingControl.scale(visualizationServer, scale, visualizationServer.center)
-                        }
+
+                        // 创建 DefaultModalGraphMouse
+                        val graphMouse = DefaultModalGraphMouse<String, String>()
+                        // 获取 graphMouse 的模式
+                        graphMouse.setMode(ModalGraphMouse.Mode.PICKING)
+                        // 添加节点拖拽插件
+                        val pickingPlugin = PickingGraphMousePlugin<String, String>()
+                        graphMouse.add(pickingPlugin)
+                        // 添加空白处拖拽平移插件
+                        val translatingPlugin = TranslatingGraphMousePlugin()
+                        graphMouse.add(translatingPlugin)
+                        // 应用到 VisualizationServer
+                        visualizationServer.graphMouse = graphMouse
 
 
                     }
