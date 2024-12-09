@@ -56,7 +56,27 @@ class PseudoCodeInstParser:InstCommentParser {
                 return "${asmItem.args[0]} = ${asmItem.args[1]}"
             }
             "jump operations" ->{
-                return "GOTO lable_${asmItem.codeOffset + asmItem.args[0].toInt()}"
+                var conditions = when(asmItem.asmName) {
+                    "jmp" ->  ""
+                    "jeqz" ->  "if (acc == 0)"
+                    "jnez" ->  "if (acc != 0)"
+                    "jstricteqz" ->  "if (acc === 0)"
+                    "jnstricteqz" ->  "if (acc !== 0)"
+                    "jeqnull" ->  "if (acc == null)"
+                    "jnenull" ->  "if (acc != null)"
+                    "jstricteqnull" ->  "if (acc === 0)"
+                    "jnstricteqnull" ->  "if (acc !== 0)"
+                    "jequndefined" ->  "if (acc == undefined)"
+                    "jneundefined" ->  "if (acc != undefined)"
+                    "jstrictequndefined" ->  "if (acc === undefined)"
+                    "jnstrictequndefined" ->  "if (acc !== undefined)"
+                    "jeq" ->  "if (acc == ${asmItem.args[0]})"
+                    "jne" ->  "if (acc != ${asmItem.args[0]})"
+                    "jstricteq" ->  "if (acc === ${asmItem.args[0]})"
+                    "jnstricteq" ->  "if (acc == ${asmItem.args[0]})"
+                    else -> asmItem.asmName
+                }
+                return "${conditions} GOTO lable_${asmItem.codeOffset + asmItem.args[0].toInt()}"
             }
 
             "Dynamic load accumulator from register",
@@ -83,8 +103,8 @@ class PseudoCodeInstParser:InstCommentParser {
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
                         return "acc = acc(${splicingArgRange(s_reg_idx, arg_len)})"
                     }
-                    "supercallspread" -> return "------------"
-                    "apply" -> return "------------"
+                    "supercallspread" -> return "acc = acc.super(${asmItem.args[1]})"
+                    "apply" -> return "acc = ${asmItem.args[1]}.acc(${asmItem.args[2]})"
                     "callthis0", "callthis1", "callthis2", "callthis3" ->
                         return "acc = ${asmItem.args[1]}.acc(${splicingArg(asmItem){ idx -> idx > 1 }})"
                     "callthisrange" -> {
@@ -92,12 +112,16 @@ class PseudoCodeInstParser:InstCommentParser {
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
                         return "acc = ${asmItem.args[2]}(${splicingArgRange(s_reg_idx+1, arg_len)})"
                     }
-                    "supercallthisrange" -> {
+                    "supercallthisrange", "supercallarrowrange" -> {
                         val arg_len = asmItem.args[1].toInt()
                         val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
                         return "acc = super(${splicingArgRange(s_reg_idx, arg_len)})"
                     }
-                    "supercallarrowrange" -> return "------------"
+//                    "supercallarrowrange" -> {
+//                        val arg_len = asmItem.args[1].toInt()
+//                        val s_reg_idx = asmItem.args[2].split("v")[1].toInt()
+//                        return "------------"
+//                    }
                     else -> return defaultRes(asmItem)
                 }
             }
@@ -117,8 +141,8 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldobjbyvalue" -> return "acc = ${asmItem.args[1]}[acc]"
 //                    "stobjbyvalue" -> return "${asmItem.args[1]}[${asmItem.args[2]}] = acc"
 //                    "stownbyvalue" -> return "--------"
-                    "ldsuperbyvalue" -> return "--------"
-                    "stsuperbyvalue" -> return "--------"
+                    "ldsuperbyvalue" -> return "acc = ${asmItem.args[1]}.super[acc]"
+                    "stsuperbyvalue" -> return "${asmItem.args[1]}.super[acc] = acc"
 //                    "ldobjbyindex" -> return "--------"
                     "stobjbyindex", "stobjbyvalue", "stobjbyname", "stownbyvalue","stownbyname","stownbyindex" ->
                         return "${asmItem.args[1]}[${asmItem.args[2]}] = acc"
@@ -136,18 +160,18 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldobjbyname", "ldobjbyindex" -> return "acc = acc[${asmItem.args[1]}]"
 //                    "stobjbyname" -> return "--------"
 //                    "stownbyname" -> return "--------"
-                    "ldsuperbyname" -> return "--------"
-                    "stsuperbyname" -> return "--------"
+                    "ldsuperbyname" -> return "acc = acc.super[${asmItem.args[1]}]"
+                    "stsuperbyname" -> return "acc.super[${asmItem.args[1]}] = acc"
                     "ldlocalmodulevar" -> return "--------"
                     "ldexternalmodulevar" -> return "acc = ${asmItem.args[0]}"
                     "stconsttoglobalrecord" -> return "--------"
                     "stownbyvaluewithnameset" -> return "--------"
                     "stownbynamewithnameset" -> return "--------"
                     "ldbigint" -> return "--------"
-                    "ldthisbyname" -> return "--------"
-                    "stthisbyname" -> return "--------"
-                    "ldthisbyvalue" -> return "--------"
-                    "stthisbyvalue" -> return "--------"
+                    "ldthisbyname", "ldthisbyvalue" -> return "acc = this[${asmItem.args[1]}]"
+                    "stthisbyname", "stthisbyvalue" -> return "this[${asmItem.args[1]}] = acc"
+//                    "ldthisbyvalue" -> return "acc = this"
+//                    "stthisbyvalue" -> return "--------"
                     "dynamicimport" -> return "--------"
                     "asyncgeneratorreject" -> return "--------"
                     "setgeneratorstate" -> return "--------"
@@ -228,7 +252,7 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldinfinity" -> return "acc = INFINITY"
                     "ldundefined" -> return "acc = UNDEFINED"
                     "ldnull" -> return "acc = NULL"
-                    "ldsymbol" -> return "acc ??= SYMBOL"
+                    "ldsymbol" -> return "acc = SYMBOL"
                     "ldglobal" -> return "acc = GLOBAL"
                     "ldtrue" -> return "acc = true"
                     "ldfalse" -> return "acc = false"
@@ -260,8 +284,8 @@ class PseudoCodeInstParser:InstCommentParser {
             }
             "comparation instructions" -> {
                 when(asmItem.asmName) {
-                    "isin" -> return "--------"
-                    "instanceof" -> return "--------"
+                    "isin" -> return "acc = ${asmItem.args[1]} in acc"
+                    "instanceof" -> return "acc = ${asmItem.args[1]} instanceof acc"
                     "strictnoteq" -> return "acc = ${asmItem.args[0]} !== ${asmItem.args[1]}"
                     "stricteq" -> return "acc = ${asmItem.args[0]} === ${asmItem.args[1]}"
                     else -> return defaultRes(asmItem)
@@ -269,11 +293,11 @@ class PseudoCodeInstParser:InstCommentParser {
             }
             "unary operations" -> {
                 when(asmItem.asmName) {
-                    "typeof" -> return "--------"
-                    "tonumber" -> return "--------"
-                    "tonumeric" -> return "--------"
-                    "neg" -> return "--------"
-                    "not" -> return "--------"
+                    "typeof" -> return "acc = typeof(acc)"
+                    "tonumber" -> return "acc = to_number(acc)"
+                    "tonumeric" -> return "acc = to_numeric(acc)"
+                    "neg" -> return "acc = -acc"
+                    "not" -> return "acc = ~acc"
                     "inc" -> return "acc = acc + 1"
                     "dec" -> return "acc = acc - 1"
                     "istrue" -> return "acc = acc == true"
@@ -281,6 +305,7 @@ class PseudoCodeInstParser:InstCommentParser {
                     else -> return defaultRes(asmItem)
                 }
             }
+            
             else -> {
                 // acc = ecma_op(acc, operand_0, ..., operands_n)
                 return defaultRes(asmItem)

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="abcde-jvm-0.1.0-master-aa71ec5">
+    <output-path>$PROJECT_DIR$/modules/abcde/build/libs</output-path>
+    <root id="archive" name="abcde-jvm-0.1.0-master-aa71ec5.jar">
+      <element id="module-output" name="kra.modules.abcde.jvmMain" />
+    </root>
+  </artifact>
+</component>
