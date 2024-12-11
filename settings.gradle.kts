@@ -14,7 +14,11 @@ pluginManagement {
         kotlin("plugin.serialization") version(extra["kotlin.version"] as String) apply false
         id("org.jetbrains.kotlin.plugin.compose").version(extra["kotlin.version"] as String) apply false
         id("org.jetbrains.compose").version(extra["compose.version"] as String) apply false
+        kotlin("jvm") version "2.0.21"
     }
+}
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
 rootProject.name = "kra"

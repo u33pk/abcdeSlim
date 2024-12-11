@@ -96,7 +96,7 @@ class PseudoCodeInstParser:InstCommentParser {
             "call instructions" -> {
 
                 when(asmItem.asmName) {
-                    "callarg0", "callarg1", "callarg2", "callarg3" ->
+                    "callarg0", "callarg1", "callarg2", "callarg3", "callargs2", "callargs3" ->
                         return "acc = acc(${splicingArg(asmItem){ idx -> idx >= 1 }})"
                     "callrange" -> {
                         val arg_len = asmItem.args[1].toInt()
