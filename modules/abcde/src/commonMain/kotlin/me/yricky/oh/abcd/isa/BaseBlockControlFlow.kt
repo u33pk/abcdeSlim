@@ -19,6 +19,12 @@ class BaseBlockControlFlow(
         .directed()
         .allowsSelfLoops(true)
         .build()
+
+    val dominatorTree : MutableValueGraph<BaseBlock, Boolean> = ValueGraphBuilder
+        .directed()
+        .allowsSelfLoops(true)
+        .build()
+
     val baseBlockOffAsm by lazy {
         val off2Asm: HashMap<Number, AsmItem> = HashMap()
         asms.forEach {
@@ -46,6 +52,7 @@ class BaseBlockControlFlow(
         return null
     }
     val basicBlockMap = mutableMapOf<Int, BaseBlock>()
+
     // 获取正确的基本块列表 还没有连接信息
     fun generaStep1() : ArrayList<BaseBlock>{
         val start_flags = ArrayList<Number>()
@@ -85,6 +92,7 @@ class BaseBlockControlFlow(
                 bbk = BaseBlock()
                 if(pOff != 0)
                     end_flags.add(pOff)
+                if (_asm.codeOffset == 0) bbk.isStart = true
             }
             bbk.addAsm(_asm)
             if(_asm.codeOffset in end_flags){
@@ -190,15 +198,74 @@ class BaseBlockControlFlow(
 //            println("${edge.source().offset} -> ${edge.target().offset}")
 //        }
 //    }
-    // 有向图 -> CFG
+
+    /**
+     *  生成支配树
+     */
     fun generaStep4(){
+        val nodes = baseBlockCF.nodes()
+        //块的支配者集合
+        val dominators = mutableMapOf<BaseBlock, MutableSet<BaseBlock>>()
+
+        //除初始块外，将所有块的支配者集合初始化为所有块，在后续迭代过程中收敛
+        for (node in nodes) {
+            dominators[node] = if (node.isStart) mutableSetOf(node) else nodes.toMutableSet()
+        }
+
+        var changed: Boolean
+        do {//外循环，当不再有节点的支配者集合被更新时，说明收敛完成
+            changed = false
+            for (node in nodes) {//内循环，遍历并计算每个节点的支配者集合。理想情况下，单次循环可计算完成每个节点的支配者集合
+                if (node.isStart) continue
+
+                //获取当前块的前置节点
+                val predecessors =  baseBlockCF.predecessors(node)
+                //初始化当前块的支配者集合，必定包含当前节点本身
+                val newDominators = mutableSetOf<BaseBlock>(node)
+                //获取当前节点前置节点的支配者集合，做交集计算后返回
+                if(predecessors.isNotEmpty()){
+                    newDominators.addAll(predecessors.map {dominators[it]!!}.reduce{ acc, domSet -> acc.intersect(domSet).toMutableSet() })
+                }
+
+                //更新当前节点的支配者集合
+                if(newDominators != dominators[node]){
+                    dominators[node] = newDominators
+                    changed = true
+                }
+            }
+        }while (changed)
+
+        //直接支配者<被支配者, 支配者>
+        val immediateDominators = mutableMapOf<BaseBlock, BaseBlock?>()
+        //计算直接支配者
+        for(node in nodes) {
+            if(node.isStart) {
+                immediateDominators[node] = null
+            }else{
+                //排除自身
+                val doms = dominators[node]!!.filter { it != node }
+                //other为备选节点，当doms中所有节点（除other外）的支配者集合都不包含other时，说明other离node最近，因此other为node的直接支配者
+                immediateDominators[node] = doms.find { other -> doms.all { it == other || !dominators[it]!!.contains(other) } }
+            }
+        }
+
+        //生成支配树
+        immediateDominators.keys.forEach {dominatorTree.addNode(it)}
+        immediateDominators.forEach { (node, idom) ->
+            if(idom != null){
+                dominatorTree.putEdgeValue(idom, node, true)
+            }
+        }
 
     }
+
+
 
     class BaseBlock {
         val li = ArrayList<AsmItem>()
         var name = "Normal"
         var entry = false
+        var isStart = false
         val offset by lazy {
             if(li.size > 0)
                 li[0].codeOffset
