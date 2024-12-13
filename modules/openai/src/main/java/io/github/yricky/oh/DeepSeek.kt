@@ -12,7 +12,7 @@ import kotlin.collections.ArrayList
 
 class DeepSeek {
     fun test(code: String) {
-        val api_key = "you key"
+        val api_key = ""
         var client = OpenAiClient.builder()
             .apiHost("https://api.deepseek.com/")
             .apiKey(api_key)
