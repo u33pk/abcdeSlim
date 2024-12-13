@@ -318,15 +318,6 @@ class CodeView(val code: Code,override val hap:HapView? = null):AttachHapPage() 
                         cfg.CFG(code)
                     }
                 }
-            }, composeSelectContent { _: Boolean ->     //支配树生成
-                Image(Icons.asm(), null, Modifier.fillMaxSize())
-            } to composeContent {
-                val domtree = DomTreeView()
-                Column(Modifier.fillMaxSize()){
-                    LazyColumnWithScrollBar {
-                        domtree.DomTree(code)
-                    }
-                }
             },
             (code.method.clazz as? FieldType.ClassType)?.let { it.clazz as? AbcClass }?.let { clazz ->
                 composeSelectContent{ _:Boolean ->
