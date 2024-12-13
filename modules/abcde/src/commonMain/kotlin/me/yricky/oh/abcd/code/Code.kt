@@ -68,11 +68,5 @@ class Code(
         var _pseudo = funStr.toString()
         var ds = DeepSeek()
         ds.ai_ode(_pseudo)
-        _pseudo
     }
-
-//    override fun toString(): String {
-//        var ds = DeepSeek()
-//        ds.ai_ode(pseudoCode)
-//    }
 }

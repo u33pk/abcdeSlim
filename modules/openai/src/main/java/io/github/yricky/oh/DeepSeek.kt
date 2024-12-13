@@ -9,7 +9,7 @@ import java.util.stream.Collectors
 import kotlin.collections.ArrayList
 
 class DeepSeek {
-    fun ai_ode(code: String) {
+    fun ai_ode(code: String): String {
         val api_key = ""
         var client = OpenAiClient.builder()
             .apiHost("https://api.deepseek.com/")
@@ -38,9 +38,11 @@ class DeepSeek {
         msgs.add(MessageEntity.builder()
             .content(code)
             .build())
+        var result = StringBuilder()
         client.createChatCompletion(msg_conf)
             .choices
-            .forEach{choice -> println(choice.message.content) }
+            .forEach{choice -> result.append(choice.message.content) }
+        return result.toString()
     }
 
 }
