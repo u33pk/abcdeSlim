@@ -1,5 +1,6 @@
 package me.yricky.oh.abcd.code
 
+import io.github.yricky.oh.DeepSeek
 import me.yricky.oh.abcd.AbcBufOffset
 import me.yricky.oh.abcd.cfm.AbcMethod
 import me.yricky.oh.common.LEByteBuf
@@ -8,6 +9,7 @@ import me.yricky.oh.common.DataAndNextOff
 import me.yricky.oh.common.nextOffset
 import me.yricky.oh.common.value
 import me.yricky.oh.utils.readULeb128
+
 
 class Code(
     val method:AbcMethod,
@@ -43,4 +45,34 @@ class Code(
     }
 
     val asm by lazy { Asm(this) }
+
+    val pseudoCode: String by lazy {
+        var funStr = StringBuilder()
+//        var fSig = StringBuilder()
+        funStr.append("function ${method.name}(FunctionObject, NewTarget, this")
+        for (i in 3..<numArgs){
+            funStr.append(", arg${i-3}")
+        }
+        funStr.append("){\n")   // function name(FunctionObject, NewTarget, this, arg0){
+//        var vreg = StringBuilder()
+        funStr.append("const acc")
+        for(i in 0..<numVRegs){
+            funStr.append(", v${i}")
+        }
+        funStr.append(";\n")    // const acc, v0, v1;
+        asm.baseBlocks.forEach{ bbk ->
+            funStr.append("lable_${bbk.offset}\n")
+            funStr.append("${bbk.toString(false)}\n")
+        }
+        funStr.append("}")
+        var _pseudo = funStr.toString()
+        var ds = DeepSeek()
+        ds.ai_ode(_pseudo)
+        _pseudo
+    }
+
+//    override fun toString(): String {
+//        var ds = DeepSeek()
+//        ds.ai_ode(pseudoCode)
+//    }
 }

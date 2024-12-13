@@ -1,6 +1,6 @@
 package io.github.yricky.oh
 
 suspend fun main() {
-    var ds = DeepSeek()
-    ds.test()
+    val ds = DeepSeek()
+    ds.ai_ode("")
 }

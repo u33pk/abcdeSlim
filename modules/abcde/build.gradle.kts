@@ -44,6 +44,7 @@ kotlin {
             dependencies{
                 api(project(":modules:common"))
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0")
+                api(project(":modules:openai"))
             }
         }
 
@@ -54,7 +55,8 @@ kotlin {
                 implementation("com.google.guava:guava:33.3.1-jre")
 //                implementation("com.github.jrtom:jung:master-SNAPSHOT")
 //                implementation("org.graphviz:graphviz:2.38")
-                implementation("org.devlive.sdk:openai-java-sdk:2024.01.3") // AI sdk
+//                implementation("org.devlive.sdk:openai-java-sdk:2024.01.3") // AI sdk
+                api(project(":modules:openai"))
             }
         }
 

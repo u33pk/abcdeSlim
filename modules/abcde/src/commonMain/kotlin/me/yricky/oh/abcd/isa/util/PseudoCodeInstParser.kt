@@ -155,8 +155,8 @@ class PseudoCodeInstParser:InstCommentParser {
                     "getmodulenamespace" -> return "--------"
                     "stmodulevar" -> return "export acc"
                     "trystglobalbyname" -> return "--------"
-                    "ldglobalvar", "tryldglobalbyname" -> return "acc = GLOBAL[${asmItem.args[1]}]"
-                    "stglobalvar", "sttoglobalrecord" -> return "GLOBAL[${asmItem.args[1]}] = acc"
+                    "ldglobalvar", "tryldglobalbyname" -> return "acc = _GLOBAL[${asmItem.args[1]}]"
+                    "stglobalvar", "sttoglobalrecord" -> return "_GLOBAL[${asmItem.args[1]}] = acc"
                     "ldobjbyname", "ldobjbyindex" -> return "acc = acc[${asmItem.args[1]}]"
 //                    "stobjbyname" -> return "--------"
 //                    "stownbyname" -> return "--------"
@@ -225,23 +225,22 @@ class PseudoCodeInstParser:InstCommentParser {
             }
             "binary operations" -> {
                 when (asmItem.asmName) {
-                    "add2" -> return "acc = acc + ${asmItem.args[1]}"
-                    "sub2" -> return "acc = acc - ${asmItem.args[1]}"
-                    "mul2" -> return "acc = acc * ${asmItem.args[1]}"
-                    "div2" -> return "acc = acc / ${asmItem.args[1]}"
-                    "mod2" -> return "acc = acc % ${asmItem.args[1]}"
-                    "eq" -> return "acc = acc == ${asmItem.args[1]}"
-                    "noteq" -> return "acc = acc != ${asmItem.args[1]}"
-                    "less" -> return "acc = acc < ${asmItem.args[1]}"
-                    "lesseq" -> return "acc = acc <= ${asmItem.args[1]}"
-                    "greater" -> return "acc = acc > ${asmItem.args[1]}"
-                    "greatereq" -> return "acc = acc >= ${asmItem.args[1]}"
-                    "shl2" -> return "acc = acc << ${asmItem.args[1]}"
-                    "shr2" -> return "acc = acc >> ${asmItem.args[1]}"
-                    "ashr2" -> return "acc ??= acc >> ${asmItem.args[1]}"
-                    "and2" -> return "acc = acc & ${asmItem.args[1]}"
-                    "or2" -> return "acc = acc | ${asmItem.args[1]}"
-                    "xor2" -> return "acc = acc ^ ${asmItem.args[1]}"
+                    "add2" -> return "acc =  ${asmItem.args[1]} + acc"
+                    "sub2" -> return "acc =  ${asmItem.args[1]} - acc"
+                    "mul2" -> return "acc =  ${asmItem.args[1]} * acc"
+                    "div2" -> return "acc =  ${asmItem.args[1]} / acc"
+                    "mod2" -> return "acc =  ${asmItem.args[1]} % acc"
+                    "eq" -> return "acc =  ${asmItem.args[1]} == acc"
+                    "noteq" -> return "acc =  ${asmItem.args[1]} != acc"
+                    "less" -> return "acc =  ${asmItem.args[1]} < acc"
+                    "lesseq" -> return "acc =  ${asmItem.args[1]} <= acc"
+                    "greater" -> return "acc =  ${asmItem.args[1]} > acc"
+                    "greatereq" -> return "acc =  ${asmItem.args[1]} >= acc"
+                    "shl2" -> return "acc =  ${asmItem.args[1]} << acc"
+                    "shr2", "ashr2" -> return "acc =  ${asmItem.args[1]} >> acc"
+                    "and2" -> return "acc =  ${asmItem.args[1]} & acc"
+                    "or2" -> return "acc =  ${asmItem.args[1]} | acc"
+                    "xor2" -> return "acc =  ${asmItem.args[1]} ^ acc"
                     "exp" -> return "acc = exp(${asmItem.args[1]})"
                     else -> return defaultRes(asmItem)
                 }
@@ -252,8 +251,8 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldinfinity" -> return "acc = INFINITY"
                     "ldundefined" -> return "acc = UNDEFINED"
                     "ldnull" -> return "acc = NULL"
-                    "ldsymbol" -> return "acc = SYMBOL"
-                    "ldglobal" -> return "acc = GLOBAL"
+                    "ldsymbol" -> return "acc = _SYMBOL"
+                    "ldglobal" -> return "acc = _GLOBAL"
                     "ldtrue" -> return "acc = true"
                     "ldfalse" -> return "acc = false"
                     "ldhole" -> return "acc ??= HOLE"
@@ -303,6 +302,12 @@ class PseudoCodeInstParser:InstCommentParser {
                     "istrue" -> return "acc = acc == true"
                     "isfalse" -> return "acc = acc == false"
                     else -> return defaultRes(asmItem)
+                }
+            }
+            "throw instructions" -> {
+                when(asmItem.asmName) {
+                    "throw" -> return "throw acc"
+                    else -> return asmItem.asmName.replace(".", " ")
                 }
             }
             

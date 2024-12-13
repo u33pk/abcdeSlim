@@ -8,19 +8,20 @@ import org.devlive.sdk.openai.entity.MessageEntity
 import java.util.stream.Collectors
 import kotlin.collections.ArrayList
 
-
-
 class DeepSeek {
-    fun test(code: String) {
-        val api_key = "you key"
+    fun ai_ode(code: String) {
+        val api_key = ""
         var client = OpenAiClient.builder()
             .apiHost("https://api.deepseek.com/")
             .apiKey(api_key)
+            .timeout(300)
             .build()
+
         client.models.models.forEach{ println(it.name) }
         var msgs = ArrayList<MessageEntity>()
         var msg_conf = ChatEntity.builder()
             .messages(msgs)
+            .maxTokens(4096)
             .build()
         msg_conf.model = "deepseek-coder"
         //提示词
@@ -35,24 +36,7 @@ class DeepSeek {
             }
         // 要优化的代码
         msgs.add(MessageEntity.builder()
-            .content("import SelfC from './SelfC';\n" +
-                    "\n" +
-                    "function test(FunctionObject, NewTarget, this) {\n" +
-                    "var aac, v0, v1, v2, v3, v4, v5, v6, v7;\n" +
-                    "v0 = FunctionObject\n" +
-                    "v1 = NewTarget\n" +
-                    "v2 = this\n" +
-                    "v6 = acc\n" +
-                    "acc = SelfC\n" +
-                    "v4 = acc\n" +
-                    "v5 = acc\n" +
-                    "acc = v4\n" +
-                    "aac = aac[\"prototype\"]\n" +
-                    "v7 = acc\n" +
-                    "acc = v4\n" +
-                    "acc = stmodulevar(acc, 0)\n" +
-                    "return acc\n" +
-                    "}")
+            .content(code)
             .build())
         client.createChatCompletion(msg_conf)
             .choices

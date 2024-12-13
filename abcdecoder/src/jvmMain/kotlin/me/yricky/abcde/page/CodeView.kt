@@ -314,8 +314,10 @@ class CodeView(val code: Code,override val hap:HapView? = null):AttachHapPage() 
             } to composeContent {
                 val cfg = CFGView()
                 Column(Modifier.fillMaxSize()){
+                    Text(code.pseudoCode)
                     LazyColumnWithScrollBar {
                         cfg.CFG(code)
+//                        Text(code.pseudoCode)
                     }
                 }
             },

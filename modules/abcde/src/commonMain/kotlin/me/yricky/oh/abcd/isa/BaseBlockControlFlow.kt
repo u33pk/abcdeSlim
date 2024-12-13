@@ -157,39 +157,6 @@ class BaseBlockControlFlow(
             }
         }
     }
-
-    // 生成有向图
-//    fun generaStep3() {
-//        baseBlocks.forEach {
-//            baseBlockCF.addNode(it)
-//        }
-//        baseBlockPath.forEach { (_off, next_asm) ->
-//            baseBlockOffAsm.get(_off)?.let{ cur_asm ->
-//                val cur_bbk = findBBKbyAsm(cur_asm)
-//                val next_bbk = findBBKbyAsm(next_asm)
-//                if(cur_bbk != null && next_bbk != null&& cur_bbk != next_bbk){
-//                    if(cur_bbk.name == "Normal") {
-//                        val cur_idx =  revBaseblocks.get(cur_bbk)
-//                        val near_bbk = cur_idx?.let { baseBlocks.get(it + 1) }
-////                            println("${cur_bbk.offset} --- ${near_bbk?.let { it.offset }}")
-//                        baseBlockCF.putEdgeValue(cur_bbk, near_bbk, true)
-//                        baseBlockCF.putEdgeValue(cur_bbk, next_bbk, true)
-//                    }
-//                    else if(cur_bbk.name == "Final") {
-//
-//                    }
-//                    else if(cur_bbk.name == "Jmp"){
-//                        baseBlockCF.putEdgeValue(cur_bbk, next_bbk, true)
-//                    }
-//                }
-//
-//            }
-//        }
-//
-//        baseBlockCF.edges().forEach { edge ->
-//            println("${edge.source().offset} -> ${edge.target().offset}")
-//        }
-//    }
     // 有向图 -> CFG
     fun generaStep4(){
 
@@ -230,6 +197,21 @@ class BaseBlockControlFlow(
 //                println(it.pseudoString)
             }
             return bbksb.toString()
+        }
+        fun toString(all: Boolean): String{
+            if(all)
+                return this.toString()
+            else{
+                val bbksb = StringBuilder()
+                this.li.forEach {
+                    val _code = it.toString().split("# ")[1]
+                    if(_code.indexOf("---") == -1){
+                        bbksb.append("    ${_code}\n")
+                    }
+
+                }
+                return bbksb.toString()
+            }
         }
     }
 }
