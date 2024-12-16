@@ -1,55 +1,31 @@
-import org.eclipse.jgit.lib.Repository
-import org.eclipse.jgit.lib.RepositoryBuilder
 
 plugins {
-    kotlin("multiplatform") apply false
-    kotlin("plugin.serialization") apply false
-    id("org.jetbrains.compose") apply false
-    id("org.jetbrains.kotlin.plugin.compose") apply false
-    `maven-publish`
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ktor)
+}
+
+group = "com.abcslim"
+version = "0.0.1"
+
+application {
+    mainClass.set("io.ktor.server.netty.EngineMain")
+
+    val isDevelopment: Boolean = project.ext.has("development")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
 repositories {
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-    maven("https://maven.aliyun.com/repository/central")
-    maven("https://maven.aliyun.com/repository/public/")
-    google()
-    gradlePluginPortal()
+//    mavenLocal()
     mavenCentral()
 }
 
-buildscript {
-    dependencies{
-        classpath("org.eclipse.jgit:org.eclipse.jgit:6.10.0.202406032230-r")
-    }
-}
-
-val repository:Repository = RepositoryBuilder().setGitDir(File(rootDir,".git")).build()
-val projectVersionCode = "0.1.0"
-
-val version = run {
-    val branch:String = repository.branch
-    if(branch == "v/$projectVersionCode"){
-        projectVersionCode
-    } else {
-        "$projectVersionCode-${branch}-${repository.findRef("HEAD").objectId.abbreviate(7).name()}"
-    }
-}
-
-println("project dir: ${rootDir.absolutePath}")
-println("version: $version")
-println("java version: ${System.getProperty("java.version")}")
-
-project.rootProject.group = "io.github.yricky.oh"
-project.rootProject.version = version
-
-tasks{
-    named("publishToMavenLocal"){
-        dependsOn(getByPath(":modules:common:publishToMavenLocal"))
-        dependsOn(getByPath(":modules:abcde:publishToMavenLocal"))
-        dependsOn(getByPath(":modules:resde:publishToMavenLocal"))
-        doLast {
-            println("Done!\ngroupId: ${project.rootProject.group}\nversion: ${project.rootProject.version}")
-        }
-    }
+dependencies {
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.logback.classic)
+    implementation(libs.ktor.server.config.yaml)
+    implementation(project(":abcde"))
+//    implementation("io.github.yricky.oh:abcde-jvm:0.1.0-master-2b47325")
+//    testImplementation(libs.ktor.server.test.host)
+//    testImplementation(libs.kotlin.test.junit)
 }

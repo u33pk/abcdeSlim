@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4bf0210-8d7a-4e3b-9d66-4fc03e2726fd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_main_62d9c41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_master_2b47325.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_master_3f2f559.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_master_5fa7114.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_master_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_master_aa71ec5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_master_ae52f19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcde_jvm_0_1_0_muirelle_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_main_62d9c41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_master_2b47325.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_master_3f2f559.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_master_5fa7114.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_master_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_master_aa71ec5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_master_ae52f19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/abcdecoder_jvm_0_1_0_muirelle_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_main_62d9c41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_master_2b47325.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_master_3f2f559.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_master_5fa7114.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_master_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_master_aa71ec5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_master_ae52f19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/common_jvm_0_1_0_muirelle_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/engine_jvm_0_1_0_main_62d9c41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/findStr_jvm_1_0_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_main_62d9c41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_master_2b47325.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_master_3f2f559.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_master_5fa7114.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_master_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_master_aa71ec5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_master_ae52f19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hapde_jvm_0_1_0_muirelle_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_main_62d9c41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_master_2b47325.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_master_3f2f559.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_master_5fa7114.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_master_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_master_aa71ec5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_master_ae52f19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/resde_jvm_0_1_0_muirelle_6393532.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.java-version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.kotlin/errors/errors-1732720384601.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.run/desktop.run.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/AppState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/HapSession.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/cli/CliEntry.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/cli/CliFunc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/content/AbcUniSearch.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/content/ModuleInfoContent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/content/SettingsPanel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/content/VersionPanel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/desktop/DesktopUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/desktop/fileChoosers.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/AbcView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/CFGView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/ClassView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/CodeView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/DomTreeView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/HapView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/Page.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/ResIndexView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/page/Welcome.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/HexView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/MultiNodeSelectionState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/TreeItemList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/asm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/search.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/theme.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/utils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/ui/windowFrame.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/util/SelectedFile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/util/TreeModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/fonts/jbMono/JetBrainsMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/fonts/jbMono/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/annotation/annotation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/annotation/annotation_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/anyType/anyType.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/anyType/anyType_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/archive/archive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/archive/archive_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/asm/asm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/asm/asm_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/checkmark/checkmark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/checkmark/checkmark_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/chevronDown/chevronDown.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/chevronDown/chevronDown_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/chevronRight/chevronRight.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/chevronRight/chevronRight_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/class/class.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/class/class_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/classAbstract/classAbstract.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/classAbstract/classAbstract_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/closeSmallHovered/closeSmallHovered.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/closeSmallHovered/closeSmallHovered_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/darkTheme/darkTheme.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/darkTheme/darkTheme_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/editorConfig/editorConfig.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/editorConfig/editorConfig_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/enum/enum.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/enum/enum_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/field/field.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/field/field_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/folder/folder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/folder/folder_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/gitee.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/github.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/greyKey/greyKey.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/greyKey/greyKey_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/homeFolder/homeFolder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/homeFolder/homeFolder_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/image/image.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/image/image_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/indexCluster/indexCluster.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/indexCluster/indexCluster_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/info/info.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/info/info_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/interface/interface.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/interface/interface_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/json/json.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/json/json_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/library/library.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/library/library_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/libraryFolder/libraryFolder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/libraryFolder/libraryFolder_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/lightTheme/lightTheme.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/lightTheme/lightTheme_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/listFiles/listFiles.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/listFiles/listFiles_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/method/method.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/method/method_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/methodAbstract/methodAbstract.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/methodAbstract/methodAbstract_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/moduleGroup/moduleGroup.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/moduleGroup/moduleGroup_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/package/package.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/package/package_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/resourcesRoot/resourcesRoot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/resourcesRoot/resourcesRoot_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/search/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/search/search_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/showAsTree/showAsTree.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/showAsTree/showAsTree_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/stub/stub.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/stub/stub_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/watch/watch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/watch/watch_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/xml/xml.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcdecoder/src/jvmMain/resources/ic/xml/xml_dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/image/Screenshot_20240719_202230.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/image/Screenshot_20240719_204555.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/image/Screenshot_20240719_204623.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/image/Screenshot_20240719_204701.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/image/Screenshot_20240719_204729.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/image/Screenshot_20240719_204801.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/libabcde.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/findStr/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/findStr/src/jvmMain/kotlin/me/yricky/oh/findstr/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/AbcBuf.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/AbcBufOffset.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/AbcHeader.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/Region.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/AbcAnnotation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/ClassItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/FieldItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/FieldType.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/MethodItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/ParamAnnotation.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/cfm/Proto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/code/Code.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/code/DebugInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/code/LineNumberProgram.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/code/TryBlock.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/Asm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/AsmMap.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/BaseBlockControlFlow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/Inst.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/InstFmt.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/bean/Chapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/bean/InsGroup.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/bean/InsPrefix.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/bean/Instruction.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/bean/Isa.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/bean/TagDescription.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/BaseInstParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/ExternModuleParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/InstCommentParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/InstDisAsmParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/LineNumberCommentParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/PseudoCodeInstParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/RawByteCommentParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/isa/util/V2AInstParser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/literal/LiteralArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/literal/ModuleLiteralArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/literal/OhmUrl.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/openAI/LLMServer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/utils/Adler32.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/utils/Annotations.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/utils/MUtf8.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/kotlin/me/yricky/oh/utils/utils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/commonMain/resources/abcde/isa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/jvmMain/kotlin/me/yricky/oh/abcd/isa/Asm.jvm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/jvmMain/kotlin/me/yricky/oh/utils/misc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/jvmTest/java/me/yricky/oh/abcd/AbcHeaderTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/jvmTest/java/me/yricky/oh/abcd/isa/bean/IsaTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/jvmTest/java/me/yricky/oh/utils/Adler32Test.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/jvmTest/java/me/yricky/oh/utils/UtilsKtTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/nativeMain/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/abcde/src/nativeMain/kotlin/me/yricky/oh/abcd/isa/Asm.native.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/src/commonMain/kotlin/me/yricky/oh/common/BufOffset.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/src/commonMain/kotlin/me/yricky/oh/common/DataAndNextOff.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/src/commonMain/kotlin/me/yricky/oh/common/LEByteBuf.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/src/commonMain/kotlin/me/yricky/oh/common/TreeStruct.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/src/jvmMain/kotlin/me/yricky/oh/common/misc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/commonMain/kotlin/me/yricky/oh/hapde/AppConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/commonMain/kotlin/me/yricky/oh/hapde/Constant.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/commonMain/kotlin/me/yricky/oh/hapde/HapConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/commonMain/kotlin/me/yricky/oh/hapde/ModuleConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/jvmMain/kotlin/me/yricky/oh/hapde/EndOfCentralDirectory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/jvmMain/kotlin/me/yricky/oh/hapde/HapFileInfo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/jvmMain/kotlin/me/yricky/oh/hapde/HapSignBlocks.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/hapde/src/jvmTest/kotlin/me/yricky/oh/hapde/HapFileInfoTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/IdSet.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/IndexString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/LimitKeyConfig.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/ResIndexBuf.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/ResIndexHeader.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/ResType.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/commonMain/kotlin/me/yricky/oh/resde/ResourceItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/jvmTest/kotlin/me/yricky/oh/resde/LimitKeyConfigTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/resde/src/jvmTest/kotlin/me/yricky/oh/resde/ResIndexBufTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2qETTbxdX0sjDlQgD0q5041eBhu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build server.executor": "Run",
+    "Kotlin.ApplicationKt.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "api",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/orz/project/server",
+    "settings.editor.selected.configurable": "http.proxy"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abcslim.ApplicationKt" />
+      <module name="server.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.ApplicationKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4bf0210-8d7a-4e3b-9d66-4fc03e2726fd" name="Changes" comment="" />
+      <created>1734226743498</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734226743498</updated>
+    </task>
+    <servers />
+  </component>
+</project>
