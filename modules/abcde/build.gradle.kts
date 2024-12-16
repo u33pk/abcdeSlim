@@ -44,7 +44,7 @@ kotlin {
             dependencies{
                 api(project(":modules:common"))
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0")
-                api(project(":modules:openai"))
+//                api(project(":modules:openai"))
             }
         }
 
@@ -53,10 +53,12 @@ kotlin {
 //                api("com.charleskorn.kaml:kaml:0.58.0")
 //                api("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.17.1")
                 implementation("com.google.guava:guava:33.3.1-jre")
+                implementation("com.aallam.openai:openai-client:3.8.2")
+                implementation("org.devlive.sdk:openai-java-sdk:2024.01.3")
 //                implementation("com.github.jrtom:jung:master-SNAPSHOT")
 //                implementation("org.graphviz:graphviz:2.38")
 //                implementation("org.devlive.sdk:openai-java-sdk:2024.01.3") // AI sdk
-                api(project(":modules:openai"))
+//                api(project(":modules:openai"))
             }
         }
 

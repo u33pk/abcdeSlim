@@ -31,5 +31,6 @@ include(":modules:hapde")
 //include(":examples:findStr")
 
 include("abcdecoder")
-include("modules:openai")
-findProject(":modules:openai")?.name = "openai"
+//include("modules:openai")
+//findProject(":modules:openai")?.name = "openai"
+include("Server")

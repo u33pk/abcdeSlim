@@ -1,6 +1,6 @@
 package me.yricky.oh.abcd.code
 
-import io.github.yricky.oh.DeepSeek
+import me.yricky.oh.openAI.LLMServer
 import me.yricky.oh.abcd.AbcBufOffset
 import me.yricky.oh.abcd.cfm.AbcMethod
 import me.yricky.oh.common.LEByteBuf
@@ -66,7 +66,7 @@ class Code(
         }
         funStr.append("}")
         var _pseudo = funStr.toString()
-        var ds = DeepSeek()
-        ds.ai_ode(_pseudo)
+        var ds = LLMServer()
+        ds.ai_ode(_pseudo, "")
     }
 }

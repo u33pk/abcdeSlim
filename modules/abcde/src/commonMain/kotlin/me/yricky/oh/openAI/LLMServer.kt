@@ -1,5 +1,4 @@
-package io.github.yricky.oh
-
+package me.yricky.oh.openAI
 import org.devlive.sdk.openai.OpenAiClient
 import org.devlive.sdk.openai.entity.ChatEntity
 import org.devlive.sdk.openai.entity.CompletionEntity
@@ -8,9 +7,8 @@ import org.devlive.sdk.openai.entity.MessageEntity
 import java.util.stream.Collectors
 import kotlin.collections.ArrayList
 
-class DeepSeek {
-    fun ai_ode(code: String): String {
-        val api_key = ""
+class LLMServer {
+    fun ai_ode(code: String, api_key: String): String {
         var client = OpenAiClient.builder()
             .apiHost("https://api.deepseek.com/")
             .apiKey(api_key)
@@ -44,5 +42,4 @@ class DeepSeek {
             .forEach{choice -> result.append(choice.message.content) }
         return result.toString()
     }
-
 }
