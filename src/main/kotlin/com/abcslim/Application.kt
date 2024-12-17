@@ -14,25 +14,10 @@ import java.nio.channels.FileChannel
 
 
 fun main(args: Array<String>) {
-    embeddedServer(Netty, 8080) {
-        routing {
-            get("/") {
-                call.respondText(test(), ContentType.Text.Html)
-            }
-        }
-    }.start(wait = true)
+    EngineMain.main(args)
 }
 
 fun Application.module() {
     configureRouting()
 }
 
-fun test(): String{
-    val file = File("/Users/orz/DevEcoStudioProjects/RevComp/entry/build/default/intermediates/loader_out/default/ets/360.abc")
-    val abc = file.asAbcBuf()
-    val sb = StringBuilder()
-    abc.classes.forEach { l ->
-        sb.append(l.value.name, "\n")
-    }
-    return sb.toString()
-}
