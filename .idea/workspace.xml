@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4bf0210-8d7a-4e3b-9d66-4fc03e2726fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/space/Space.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Routing.kt" afterDir="false" />
-    </list>
+    <list default="true" id="c4bf0210-8d7a-4e3b-9d66-4fc03e2726fd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

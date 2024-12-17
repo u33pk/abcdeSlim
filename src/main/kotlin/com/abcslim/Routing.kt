@@ -20,7 +20,7 @@ fun Application.configureRouting() {
 }
 
 fun test(): String{
-    val file = File("test.abc")
+    val file = File("/Users/orz/project/unitTest/out/test.abc")
     val abc = file.asAbcBuf()
     val res = ArrayList<String>()
     abc.classes.forEach { l ->
