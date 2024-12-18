@@ -14,6 +14,15 @@ fun getMethodCode(methodPath: String): String{
     return "not found method"
 }
 
+fun getAsm(methodPath: String): String{
+    val _m = Context.getData(methodPath)
+    if(_m is MethodCode){
+        val method = _m as MethodCode
+        return method.asmCode
+    }
+    return "not found method"
+}
+
 class MethodCode(
     _method: AbcMethod
 ){
@@ -28,6 +37,15 @@ class MethodCode(
     val llmCode by lazy {
         val llm = LLMServer(Config.AIServer, Config.AIKey, Config.AIModule)
         llm.ai_ode(code?.pseudoCode ?:"")
+    }
+
+    val asmCode by lazy{
+        val res = StringBuilder()
+        code?.asm?.baseBlocks?.forEach{ bbk ->
+            res.append("lable_${bbk.offset}\n")
+            res.append(bbk)
+        }
+        res.toString()
     }
 
 }

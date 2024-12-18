@@ -24,7 +24,6 @@ fun loadInnerAsmMap(): AsmMap {
 //            Asm::class.java.classLoader.getResourceAsStream("abcde/isa.json")!!.reader().readText())
 //    )
     val isa_json = Asm::class.java.classLoader.getResourceAsStream("abcde/isa.json")!!.reader().readText()
-    println(isa_json)
     val gson = Gson()
     val res = AsmMap(gson.fromJson(isa_json, Isa::class.java))
     res.isa.groups.forEach {

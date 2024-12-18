@@ -5,6 +5,7 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import com.abcslim.abcde.AbcClazz
+import com.abcslim.abcde.getAsm
 import com.abcslim.abcde.getMethodCode
 import com.abcslim.global.Context
 
@@ -25,7 +26,12 @@ fun Application.configureRouting() {
         }
         get("/method") {
             val methodPath = call.request.queryParameters["method"]
-            call.respondText(getMethodCode(methodPath!!), ContentType.Application.Json)
+            call.respondText(getMethodCode(methodPath!!), ContentType.Text.Html)
+        }
+
+        get("/asm") {
+            val methodPath = call.request.queryParameters["method"]
+            call.respondText(getAsm(methodPath!!), ContentType.Text.Html)
         }
     }
 }
