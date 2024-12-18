@@ -4,27 +4,28 @@ import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import me.yricky.oh.utils.asAbcBuf
-import java.io.File
+import com.abcslim.abcde.AbcClazz
+import com.abcslim.abcde.getMethodCode
+import com.abcslim.global.Context
+
+//import com.abcslim.abcde.getMethodsFromClass
 
 
 fun Application.configureRouting() {
+
     routing {
-        post("/space/create") {
+        post("/space") {
 
         }
         get("/classes") {
-            call.respondText(test(), ContentType.Text.Html)
+            call.respondText(
+                AbcClazz().abcClasses,
+                ContentType.Application.Json
+            )
+        }
+        get("/method") {
+            val methodPath = call.request.queryParameters["method"]
+            call.respondText(getMethodCode(methodPath!!), ContentType.Application.Json)
         }
     }
-}
-
-fun test(): String{
-    val file = File("/Users/orz/project/unitTest/out/test.abc")
-    val abc = file.asAbcBuf()
-    val res = ArrayList<String>()
-    abc.classes.forEach { l ->
-        res.add(l.value.name)
-    }
-    return res.toString()
 }

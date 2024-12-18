@@ -1,14 +1,14 @@
 package me.yricky.oh.abcd.isa.bean
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+
 data class InsPrefix(
-    @SerialName("name")
+    @SerializedName("name")
     val name: String,
-    @SerialName("description")
+    @SerializedName("description")
     val description: String,
-    @SerialName("opcode_idx")
+    @SerializedName("opcode_idx")
     val opcodeIdx:Int
 )

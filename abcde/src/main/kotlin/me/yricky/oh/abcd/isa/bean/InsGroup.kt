@@ -1,27 +1,27 @@
 package me.yricky.oh.abcd.isa.bean
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+
 data class InsGroup(
-    @SerialName("title")
+    @SerializedName("title")
     val title:String = "",
-    @SerialName("description")
+    @SerializedName("description")
     val description:String = "",
-    @SerialName("properties")
+    @SerializedName("properties")
     val properties:List<String>? = null,
-    @SerialName("exceptions")
+    @SerializedName("exceptions")
     val exceptions:List<String> = emptyList(),
-    @SerialName("verification")
+    @SerializedName("verification")
     val verification:List<String> = emptyList(),
-    @SerialName("namespace")
+    @SerializedName("namespace")
     val namespace:String? = null,
-    @SerialName("pseudo")
+    @SerializedName("pseudo")
     val pseudo:String = "",
-    @SerialName("semantics")
+    @SerializedName("semantics")
     val semantics:String? = null,
-    @SerialName("instructions")
+    @SerializedName("instructions")
     val instructions:List<Instruction> = emptyList()
 )
 {

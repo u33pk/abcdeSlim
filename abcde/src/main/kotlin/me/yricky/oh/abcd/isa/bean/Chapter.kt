@@ -1,12 +1,12 @@
 package me.yricky.oh.abcd.isa.bean
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+
 data class Chapter(
-    @SerialName("name")
+    @SerializedName("name")
     val name:String = "",
-    @SerialName("text")
+    @SerializedName("text")
     val text:String = ""
 )

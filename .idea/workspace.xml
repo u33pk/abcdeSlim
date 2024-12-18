@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4bf0210-8d7a-4e3b-9d66-4fc03e2726fd" name="Changes" comment="" />
+    <list default="true" id="c4bf0210-8d7a-4e3b-9d66-4fc03e2726fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/abcde/AbcClazzes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/abcde/ClazzItem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/abcde/MethodCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/global/Config.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/global/Context.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/code/Code.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/code/Code.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/Asm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/Asm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/Chapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/Chapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/InsGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/InsGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/InsPrefix.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/InsPrefix.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/Instruction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/Instruction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/Isa.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/Isa.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/TagDescription.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/abcd/isa/bean/TagDescription.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/openAI/LLMServer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/abcde/src/main/kotlin/me/yricky/oh/openAI/LLMServer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/Routing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/space/Space.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/abcslim/global/Space.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +65,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -72,6 +95,11 @@
     "settings.editor.selected.configurable": "http.proxy"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.abcslim.global" />
+    </key>
+  </component>
   <component name="RunManager" selected="Kotlin.ApplicationKt">
     <configuration name="run" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>

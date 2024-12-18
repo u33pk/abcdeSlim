@@ -2,7 +2,8 @@ package me.yricky.oh.abcd.isa
 
 import com.google.common.graph.MutableValueGraph
 import com.google.common.graph.ValueGraphBuilder
-import kotlinx.serialization.json.Json
+import com.google.gson.Gson
+//import kotlinx.serialization.json.Json
 import me.yricky.oh.abcd.cfm.AbcMethod
 import me.yricky.oh.abcd.code.Code
 import me.yricky.oh.abcd.code.TryBlock
@@ -16,12 +17,16 @@ import me.yricky.oh.abcd.isa.bean.Isa
 //import me.yricky.oh.abcd.isa.util.PseudoCodeInstParser.Companion
 
 fun loadInnerAsmMap(): AsmMap {
-    val json = Json { ignoreUnknownKeys = true }
-
-    val res = AsmMap(
-        json.decodeFromString<Isa>(
-            Asm::class.java.classLoader.getResourceAsStream("abcde/isa.json")!!.reader().readText())
-    )
+//    val json = Json { ignoreUnknownKeys = true }
+//
+//    val res = AsmMap(
+//        json.decodeFromString<Isa>(
+//            Asm::class.java.classLoader.getResourceAsStream("abcde/isa.json")!!.reader().readText())
+//    )
+    val isa_json = Asm::class.java.classLoader.getResourceAsStream("abcde/isa.json")!!.reader().readText()
+    println(isa_json)
+    val gson = Gson()
+    val res = AsmMap(gson.fromJson(isa_json, Isa::class.java))
     res.isa.groups.forEach {
         it.setType()
     }

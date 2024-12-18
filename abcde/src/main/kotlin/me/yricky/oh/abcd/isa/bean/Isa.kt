@@ -1,29 +1,27 @@
 package me.yricky.oh.abcd.isa.bean
 
-import kotlinx.serialization.*
-import kotlinx.serialization.json.JsonPrimitive
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
 data class Isa(
-    @SerialName("chapters")
+    @SerializedName("chapters")
     val chapters:List<Chapter> = emptyList(),
-    @SerialName("min_version")
+    @SerializedName("min_version")
     val minVersion:String = "",
-    @SerialName("version")
+    @SerializedName("version")
     val version:String = "",
-    @SerialName(value = "api_version_map")
-    @Contextual
-    val apiVersionMap:List<List<JsonPrimitive>> = emptyList(),
-    @SerialName("incompatible_version")
+    @SerializedName("api_version_map")
+    val apiVersionMap:List<List<Any>> = emptyList(),
+    @SerializedName("incompatible_version")
     val incompatibleVersion:List<String> = emptyList(),
-    @SerialName("properties")
+    @SerializedName("properties")
     val properties:List<TagDescription> = emptyList(),
-    @SerialName("exceptions")
+    @SerializedName("exceptions")
     val exceptions:List<TagDescription> = emptyList(),
-    @SerialName("verification")
+    @SerializedName("verification")
     val verification:List<TagDescription> = emptyList(),
-    @SerialName("prefixes")
+    @SerializedName("prefixes")
     val prefixes:List<InsPrefix> = emptyList(),
-    @SerialName("groups")
+    @SerializedName("groups")
     val groups:List<InsGroup> = emptyList()
 )

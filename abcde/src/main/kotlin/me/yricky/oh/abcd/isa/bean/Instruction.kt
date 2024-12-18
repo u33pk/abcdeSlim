@@ -1,21 +1,21 @@
 package me.yricky.oh.abcd.isa.bean
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
+
 data class Instruction(
-    @SerialName("sig")
+    @SerializedName("sig")
     val sig:String,
-    @SerialName("acc")
+    @SerializedName("acc")
     val acc:String,
-    @SerialName("opcode_idx")
+    @SerializedName("opcode_idx")
     val opcodeIdx:List<Int>,
-    @SerialName("format")
+    @SerializedName("format")
     val format: List<String>,
-    @SerialName("properties")
+    @SerializedName("properties")
     val properties:List<String>? = null,
-    @SerialName("prefix")
+    @SerializedName("prefix")
     val prefix:String? = null
 )
 {

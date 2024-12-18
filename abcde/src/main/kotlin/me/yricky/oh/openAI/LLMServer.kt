@@ -8,10 +8,13 @@ import org.devlive.sdk.openai.entity.MessageEntity
 import java.util.stream.Collectors
 import kotlin.collections.ArrayList
 
-class LLMServer {
-    fun ai_ode(code: String, api_key: String): String {
+class LLMServer(host: String, key: String, mod: String) {
+    var api_key = key
+    var api_host = host
+    var api_mod = mod
+    fun ai_ode(code: String): String {
         var client = OpenAiClient.builder()
-            .apiHost("https://api.deepseek.com/")
+            .apiHost(api_host)
             .apiKey(api_key)
             .timeout(300)
             .build()
@@ -22,7 +25,7 @@ class LLMServer {
             .messages(msgs)
             .maxTokens(4096)
             .build()
-        msg_conf.model = "deepseek-coder"
+        msg_conf.model = api_mod
         //提示词
         msgs.add(MessageEntity.builder()
             .content("You are a code optimizer. Starting from the next sentence, don't reply to my superfluous content. Just the code ontology, optimize the pseudo-code into javascript code, remove intermediate variables, correctly identify the order of code blocks, and use GOTO statements as little as possible. If you are ready, tell me yes")

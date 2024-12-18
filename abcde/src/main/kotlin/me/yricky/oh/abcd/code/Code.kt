@@ -66,7 +66,8 @@ class Code(
         }
         funStr.append("}")
         var _pseudo = funStr.toString()
-        var ds = LLMServer()
-        ds.ai_ode(_pseudo, "")
+//        var ds = LLMServer("")
+//        ds.ai_ode(_pseudo)
+        _pseudo
     }
 }
