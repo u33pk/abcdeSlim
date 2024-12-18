@@ -3,6 +3,7 @@ package com.abcslim.abcde
 import com.abcslim.global.Config
 import com.abcslim.global.Context
 import me.yricky.oh.abcd.cfm.AbcMethod
+import me.yricky.oh.abcd.code.Code
 import me.yricky.oh.openAI.LLMServer
 
 fun getMethodCode(methodPath: String): String{
@@ -12,6 +13,15 @@ fun getMethodCode(methodPath: String): String{
         return method.llmCode
     }
     return "not found method"
+}
+
+fun getCode(methodPath: String): Code?{
+    val _m = Context.getData(methodPath)
+    if(_m is MethodCode){
+        val method = _m as MethodCode
+        return method.code
+    }
+    return null
 }
 
 fun getAsm(methodPath: String): String{
