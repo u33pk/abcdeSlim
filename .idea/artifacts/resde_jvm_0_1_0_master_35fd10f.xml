@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="resde-jvm-0.1.0-master-35fd10f">
-    <output-path>$PROJECT_DIR$/modules/resde/build/libs</output-path>
-    <root id="archive" name="resde-jvm-0.1.0-master-35fd10f.jar" />
-  </artifact>
-</component>
