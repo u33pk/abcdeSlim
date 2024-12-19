@@ -41,5 +41,10 @@ fun Application.configureRouting() {
             val code = getCode(methodPath!!)
             call.respondText(Graph().CFG(code), ContentType.Application.Json)
         }
+        get("/method/dom"){
+            val methodPath = call.request.queryParameters["method"]
+            val code = getCode(methodPath!!)
+            call.respondText(Graph().DOM(code), ContentType.Application.Json)
+        }
     }
 }
