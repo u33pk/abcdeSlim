@@ -1,5 +1,6 @@
 package com.abcslim
 
+import com.abcslim.global.Config
 import com.abcslim.global.Context
 import io.ktor.server.netty.*
 import io.ktor.server.routing.*
@@ -15,7 +16,7 @@ import java.nio.channels.FileChannel
 
 
 fun main(args: Array<String>) {
-    Context.initialize("")
+    Context.initialize(Config.filePath)
     EngineMain.main(args)
 }
 

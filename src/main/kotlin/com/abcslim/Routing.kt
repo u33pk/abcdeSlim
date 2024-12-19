@@ -31,7 +31,7 @@ fun Application.configureRouting() {
             call.respondText(getMethodCode(methodPath!!), ContentType.Text.Html)
         }
 
-        get("/asm") {
+        get("/method/asm") {
             val methodPath = call.request.queryParameters["method"]
             call.respondText(getAsm(methodPath!!), ContentType.Text.Html)
             call.respondText(getMethodCode(methodPath!!), ContentType.Text.Html)

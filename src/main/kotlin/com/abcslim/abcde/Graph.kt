@@ -2,6 +2,7 @@ package com.abcslim.abcde
 
 import com.google.common.graph.MutableValueGraph
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import me.yricky.oh.abcd.code.Code
 import me.yricky.oh.abcd.isa.BaseBlockControlFlow
 
@@ -27,7 +28,7 @@ class Graph {
     }
 
     fun GraphToJson(graph: MutableValueGraph<BaseBlockControlFlow.BaseBlock,Boolean>): String {
-        data class Node(val node: String)
+        data class Node(val node: JsonObject)
         data class Edge(val source:String, val target:String, val value: Boolean)
         data class Graph(val nodes: List<Node>, val edges: List<Edge>)
         val gson = Gson()

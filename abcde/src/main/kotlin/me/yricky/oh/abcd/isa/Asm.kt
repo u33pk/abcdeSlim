@@ -3,6 +3,7 @@ package me.yricky.oh.abcd.isa
 import com.google.common.graph.MutableValueGraph
 import com.google.common.graph.ValueGraphBuilder
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 //import kotlinx.serialization.json.Json
 import me.yricky.oh.abcd.cfm.AbcMethod
 import me.yricky.oh.abcd.code.Code
@@ -173,6 +174,15 @@ class Asm(
             res.append(" # ${pseudoString}")
 //            println(res.toString())
             return res.toString()
+        }
+
+        fun toJson(): JsonObject {
+            val asmJsonObj = JsonObject()
+            asmJsonObj.addProperty("offset", codeOffset)
+            asmJsonObj.addProperty("code", "${asmName} ${args.joinToString(" ")}")
+            asmJsonObj.addProperty("pseudo", pseudoString)
+            asmJsonObj.addProperty("common", asmComment)
+            return asmJsonObj
         }
     }
 }
