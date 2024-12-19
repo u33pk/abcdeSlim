@@ -15,7 +15,7 @@ import java.nio.channels.FileChannel
 
 
 fun main(args: Array<String>) {
-    Context.initialize("/Users/orz/project/unitTest/out/test.abc")
+    Context.initialize("")
     EngineMain.main(args)
 }
 

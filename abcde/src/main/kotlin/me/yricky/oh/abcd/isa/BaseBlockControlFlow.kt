@@ -2,6 +2,7 @@ package me.yricky.oh.abcd.isa
 
 import com.google.common.graph.MutableValueGraph
 import com.google.common.graph.ValueGraphBuilder
+import com.google.gson.JsonObject
 import me.yricky.oh.abcd.isa.Asm.AsmItem
 import me.yricky.oh.abcd.isa.util.ExternModuleParser
 import me.yricky.oh.abcd.isa.util.V2AInstParser
@@ -239,6 +240,15 @@ class BaseBlockControlFlow(
         fun getTermiinator(): Asm.AsmItem{
             return li.last()
         }
+        fun toJson():String{
+            val asm = this.toString()
+            val offset = this.getName1()
+            val jsonObject = JsonObject()
+            jsonObject.addProperty("offset", offset)
+            jsonObject.addProperty("asm", asm)
+            return jsonObject.toString()
+        }
+
 
         fun getName1(): String{
             return offset.toString()
