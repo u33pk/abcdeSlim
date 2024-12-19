@@ -277,7 +277,7 @@ class PseudoCodeInstParser:InstCommentParser {
                     "ldprivateproperty" -> return "--------"
                     "stprivateproperty" -> return "--------"
                     "testin" -> return "--------"
-                    "definefieldbyname" -> return "var ${asmItem.args[1].replace('"', ' ')} = acc"
+                    "definefieldbyname" -> return "${asmItem.args[2]}[${asmItem.args[1]}] = acc"
                     else -> return defaultRes(asmItem)
                 }
             }
